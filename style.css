@@ -1073,3 +1073,11 @@ footer .text-muted { color: rgba(255,255,255,0.6) !important; }
 }
 .contact-icon-box.olive { background: rgba(120,133,43,0.10); color: #78852B; }
 .contact-icon-box.brown { background: rgba(62,36,40,0.08);   color: #3E2428; }
+
+/* Kelas agar semua gambar blog memiliki ukuran seragam */
+.blog-image-uniform {
+    width: 100%;
+    height: 600px; /* Anda bisa ubah angkanya sesuai selera */
+    object-fit: cover; /* Memotong gambar agar pas tanpa terlihat gepeng */
+    object-position: center; /* Fokus potongan gambar di tengah */
+}
