@@ -603,9 +603,22 @@ footer .text-muted { color: rgba(255,255,255,0.6) !important; }
     .gallery-large { height: 300px; }
     .back-to-top   { bottom: 88px; right: 1.5rem; width: 42px; height: 42px; }
     .whatsapp-float { right: 1.5rem; bottom: 1.5rem; width: 54px; height: 54px; }
+    
+    /* Proporsional layout additions */
+    .page-hero-banner { padding: 4rem 0 2rem; }
+    .page-hero-banner h1 { font-size: 2rem; }
+    .about-section, .gallery-section, .blog-section, .services-section, .dest-section { padding: 3.5rem 0; }
+    .about-image { height: 300px; }
+    .hero-photo { height: 380px; }
+    .svc-section-title, .dest-section-title, .blog-sec-title { font-size: 1.8rem; margin-bottom: 2rem; }
+    .about-title { font-size: 1.8rem; }
 }
 @media (max-width: 576px) {
     .cta-title { font-size: 1.7rem; }
+    .page-hero-banner h1 { font-size: 1.8rem; }
+    .section-title { font-size: 1.6rem; }
+    .about-title { font-size: 1.6rem; }
+    .hero-photo { height: 300px; }
 }
 
 /* ── MODAL ───────────────────────────────────────────────── */
@@ -740,6 +753,7 @@ footer .text-muted { color: rgba(255,255,255,0.6) !important; }
     margin-top: 2.8rem;
     padding-top: 1.8rem;
     border-top: 1px solid rgba(62,36,40,0.13);
+    flex-wrap: wrap;
 }
 .hs-num {
     font-size: 1.5rem;
@@ -1049,15 +1063,17 @@ footer .text-muted { color: rgba(255,255,255,0.6) !important; }
    INDEX PAGE – RESPONSIVE OVERRIDES
    ================================================================ */
 @media (max-width: 991px) {
-    .hero-section { min-height: auto; padding: 6rem 0 3rem; }
+    .hero-section { min-height: auto; padding: 5rem 0 1rem; }
+    .hero-inner { padding: 1rem 0; }
     .hero-heading { font-size: 2.5rem; }
     .hero-section::after { display: none; }
-    .hero-img-col { margin-top: 3rem; }
-    .hero-badge-card { left: 0; }
+    .hero-img-col { margin-top: 2rem; }
+    .hero-badge-card { left: 1rem; bottom: 1rem; }
 }
 @media (max-width: 576px) {
     .hero-heading { font-size: 2rem; }
-    .hero-stats-strip { gap: 1.2rem; }
+    .hero-stats-strip { gap: 1rem; justify-content: center; }
+    .hs-divider { display: none; }
     .cta-heading { font-size: 1.8rem; }
 }
 
@@ -1074,10 +1090,28 @@ footer .text-muted { color: rgba(255,255,255,0.6) !important; }
 .contact-icon-box.olive { background: rgba(120,133,43,0.10); color: #78852B; }
 .contact-icon-box.brown { background: rgba(62,36,40,0.08);   color: #3E2428; }
 
-/* Kelas agar semua gambar blog memiliki ukuran seragam */
+/* Kelas agar semua gambar blog memiliki ukuran seragam dan responsif */
 .blog-image-uniform {
     width: 100%;
-    height: 600px; /* Anda bisa ubah angkanya sesuai selera */
-    object-fit: cover; /* Memotong gambar agar pas tanpa terlihat gepeng */
-    object-position: center; /* Fokus potongan gambar di tengah */
+    height: 500px; /* Tinggi ideal untuk tampilan Desktop */
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Pengaturan khusus untuk tampilan Mobile (Layar di bawah 768px) */
+@media (max-width: 768px) {
+    .blog-image-uniform {
+        height: 250px; /* Tinggi dikurangi agar proporsional di HP */
+    }
+}
+
+/* Mengecilkan ukuran teks sumber agar tidak mendominasi */
+cite {
+    font-size: 0.7rem; /* Ukuran lebih kecil dari teks standar */
+    word-break: break-all; /* Agar link panjang tidak merusak layout di HP */
+    font-style: normal; /* Menghilangkan efek miring bawaan cite jika ingin tegak */
+    color: #6b7280; /* Warna abu-abu halus */
+    word-wrap: break-word;
+    word-break: break-all;
+    font-style: normal;
 }
